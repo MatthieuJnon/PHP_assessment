@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('vehicles', function() {
-	return view('vehicles');
-});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');
+
+Route::get('/vehicles', 'vehicles@index');
+Route::get('/add', 'vehicles@add');
+Route::get('/delete', 'vehicles@delete');
+Route::get('/modify', 'vehicles@modify');
+

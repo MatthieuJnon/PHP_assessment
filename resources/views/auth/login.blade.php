@@ -1,12 +1,5 @@
 @extends('layouts.app')
 
-<style>
-    .container{
-        width:300px;
-        display: flex;
-        justify-content: center;
-    }
-</style>
 
 @section('content')
 <div class="container">

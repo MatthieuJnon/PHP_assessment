@@ -12,11 +12,8 @@
 		<td> mileage</td>
 	</tr>
 	@foreach($vehicles as $vehicle)
-		@if($vehicle->soft_del == 1)
-			@continue
-		@endif
 		<tr>
-			@foreach($vehicle as $info)
+			@foreach($vehicle->toArray() as $info)
 				@if($loop->iteration >= 11)
 					@break
 				@endif

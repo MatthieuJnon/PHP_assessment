@@ -18,10 +18,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('home', 'HomeController@index');
 
 Route::get('/vehicles', 'vehicles@index');
-Route::get('/add', 'vehicles@add');
-Route::get('/delete', 'vehicles@delete');
-Route::get('/modify', 'vehicles@modify');
+Route::get('/vehicles/add', 'vehicles@add');
+Route::get('/vehicles/delete', 'vehicles@delete');
+Route::get('/vehicles/modify', 'vehicles@modify');
+Route::get('/vehicles/{vehicle}', 'vehicles@show');
 

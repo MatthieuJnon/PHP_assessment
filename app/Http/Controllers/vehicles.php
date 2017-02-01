@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use \App\vehicle;
+
 use Illuminate\Http\Request;
 
-use DB;
+use Illuminate\Database\Eloquent\Model;
 
 class vehicles extends Controller
 {
@@ -25,25 +27,40 @@ class vehicles extends Controller
      */
     public function index()
     {
-    	$vehicles = DB::select('select * from vehicles');
-        return view('vehicles', compact('vehicles'));
+    	$vehicles = vehicle::all();
+        return view('vehicles.index', compact('vehicles'));
     }
+
+    // public function show($id)
+    // {
+    // 	$vehicle = vehicle::find($id);
+
+    // 	return view('vehicle.show')
+    // }
 
     public function add()
     {
-    	$vehicles = DB::select('select * from vehicles');
-        return view('add', compact('vehicles'));
+    	$vehicles = vehicle::all();
+        return view('vehicles.add', compact('vehicles'));
     }
 
     public function modify()
     {
-    	$vehicles = DB::select('select * from vehicles');
-        return view('modify', compact('vehicles'));
+    	$vehicles = vehicle::all();
+        return view('vehicles.modify', compact('vehicles'));
     }
 
     public function delete()
     {
-    	$vehicles = DB::select('select * from vehicles');
-        return view('delete', compact('vehicles'));
+    	$vehicles = vehicle::all();
+        return view('vehicles.delete', compact('vehicles'));
+    }
+
+    public function destroy($id){
+
+
+
+    	$vehicles = vehicle::all();
+        return view('vehicles', compact('vehicles'));
     }
 }

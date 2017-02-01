@@ -11,7 +11,7 @@
 			@include('layouts.table')
 		</div>
 		<div class="form_block">
-			<form method="post" action="/posts">
+			<form method="post" action="/vehicle">
 				<label for='deleteNo'> Choose the number of the vehicle you wish to delete :</label>
 				<input type='text' name='deleteNo' id='deleteNo' />
 
@@ -21,6 +21,7 @@
 
 
 			</form>
+			@include('layouts.vehicles_links')
 		</div>
 	</p>
 </div>

@@ -10,11 +10,7 @@
 		<div>
 			@include('layouts.table')
 		</div>
-		<div class="links">
-			<a href="add">add a vehicle <br></a>
-			<a href="modify">modify a vehicle<br></a>
-			<a href="delete">delete a vehicle<br></a>
-		</div>
+		@include('layouts.vehicles_links')
 	</p>
 </div>
 

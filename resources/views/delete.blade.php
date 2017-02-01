@@ -11,9 +11,11 @@
 			@include('layouts.table')
 		</div>
 		<div class="form_block">
-			<form>
+			<form method="post" action="/posts">
 				<label for='deleteNo'> Choose the number of the vehicle you wish to delete :</label>
 				<input type='text' name='deleteNo' id='deleteNo' />
+
+				{{ csrf_field() }}
 
 				<button type='submit' class='button-primary'> Submit</button>
 

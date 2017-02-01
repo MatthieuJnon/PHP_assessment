@@ -12,12 +12,12 @@
 		<td> mileage</td>
 	</tr>
 	@foreach($vehicles as $vehicle)
-		@if($vehicle->softDel == 1)
+		@if($vehicle->soft_del == 1)
 			@continue
 		@endif
 		<tr>
 			@foreach($vehicle as $info)
-				@if($loop->iteration == 11)
+				@if($loop->iteration >= 11)
 					@break
 				@endif
 				<td> {{ $info }} </td>

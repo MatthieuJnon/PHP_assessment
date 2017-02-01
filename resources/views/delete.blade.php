@@ -8,21 +8,19 @@
 
 	<p>
 		<div class ="vehicles_table">
-			<table>
-				@foreach($vehicles as $vehicle)
-					<tr>
-						@foreach($vehicle as $info)
-							<td> {{ $info }} </td>
-						@endforeach
-					</tr>
-				@endforeach
-
-			</table>
+			@include('layouts.table')
 		</div>
-		<div class="links">
-			<a href="add">add a vehicle</a>
-			<a href="modify">modify a vehicle</a>
-			<a href="delete">delete a vehicle</a>
+		<div class="form_block">
+			<form>
+				<label for='deleteNo'> Choose the number of the vehicle you wish to delete :</label>
+				<input type='text' name='deleteNo' id='deleteNo' />
+
+				<button type='submit' class='button-primary'> Submit</button>
+
+
+			</form>
 		</div>
 	</p>
 </div>
+
+@endsection

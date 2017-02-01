@@ -8,16 +8,7 @@
 
 	<p>
 		<div class ="vehicles_table">
-			<table>
-				@foreach($vehicles as $vehicle)
-					<tr>
-						@foreach($vehicle as $info)
-							<td> {{ $info }} </td>
-						@endforeach
-					</tr>
-				@endforeach
-
-			</table>
+			@include('layouts.table')
 		</div>
 		<div class="links">
 			<a href="add">add a vehicle</a>

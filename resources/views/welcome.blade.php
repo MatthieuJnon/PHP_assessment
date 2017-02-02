@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Vehicles Database
+                    Welcome {{Auth::user()->firstname}} {{ Auth::user()->lastname }}
                 </div>
 
                 <div class="links">

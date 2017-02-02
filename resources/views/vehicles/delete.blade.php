@@ -21,8 +21,9 @@
 
 
 			</form>
-			@include('layouts.vehicles_links')
+			
 		</div>
+		@include('layouts.vehicles_links')
 	</p>
 </div>
 

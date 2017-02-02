@@ -23,8 +23,7 @@ class CreateVehiclesTable extends Migration
             $table->string('type');
             $table->integer('year');
             $table->string('colour');
-            $table->integer('mileage');
-            $table->integer('soft_del');
+            $table->string('mileage');
             $table->timestamps();
         });
     }

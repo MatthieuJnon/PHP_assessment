@@ -31,17 +31,23 @@ class vehicles extends Controller
         return view('vehicles.index', compact('vehicles'));
     }
 
-    // public function show($id)
+    // public function show(vehicle $vehicle)
     // {
-    // 	$vehicle = vehicle::find($id);
 
-    // 	return view('vehicle.show')
+    // 	return view('vehicle.show', compact('vehicle'));
+    
     // }
 
-    public function add()
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
     {
     	$vehicles = vehicle::all();
-        return view('vehicles.add', compact('vehicles'));
+        return view('vehicles.create', compact('vehicles'));
     }
 
     public function modify()
@@ -56,9 +62,42 @@ class vehicles extends Controller
         return view('vehicles.delete', compact('vehicles'));
     }
 
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store()
+    {
+    	//validation :
+    	$this->validate(request(), [
+
+    		'first_name' => 'required|string|max:100',
+    		'last_name' => 'required|string|max:100',
+    		'contact_number' => 'required|between:4,25',
+    		'email' => 'required|e-mail',
+    		'manufacturer' => 'required|string|max:100',
+    		'type' => 'required|string|max:100',
+    		'year' => 'required|between:1850,2030|numeric',
+    		'colour' => 'required|string|max:50',
+    		'mileage' => 'required'
+
+    	]);
+
+    	vehicle::create(request(['first_name','last_name','contact_number','email', 'manufacturer', 'type', 'year', 'colour', 'mileage']));
+
+    	//redirection :
+    	return redirect('vehicles');
+    }
+
+    /**
+     * Soft delete the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id){
-
-
 
     	$vehicles = vehicle::all();
         return view('vehicles', compact('vehicles'));

@@ -10,16 +10,20 @@
 		<td> year</td>
 		<td> colour</td>
 		<td> mileage</td>
+		<td> delete </td>
 	</tr>
 	@foreach($vehicles as $vehicle)
 		<tr>
 			@foreach($vehicle->toArray() as $info)
-				@if($loop->iteration >= 11)
-					@break
+				@if($loop->first)
+					<td><a href="{{ url('/vehicles/{$info}') }}">{{ $info }}</a></td>
+				@elseif($loop->iteration >= 11)
+					@continue
+				@else
+					<td> {{ $info }} </td>
 				@endif
-				<td> {{ $info }} </td>
 			@endforeach
-		</tr>
+			<td><a href="{{ url('/vehicles/{$info}') }}" > delete </a></td>
 	@endforeach
 
 </table>

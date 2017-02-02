@@ -13,4 +13,6 @@ class vehicle extends Model
 	*/
 	protected $table ='vehicles';
 
+	protected $fillable = ['first_name','last_name','contact_number','email', 'manufacturer', 'type', 'year', 'colour', 'mileage'];
+
 }

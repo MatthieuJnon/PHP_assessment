@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('auth');;
 
 
 Auth::routes();
@@ -21,8 +21,9 @@ Auth::routes();
 Route::get('home', 'HomeController@index');
 
 Route::get('/vehicles', 'vehicles@index');
-Route::get('/vehicles/add', 'vehicles@add');
+Route::get('/vehicles/create', 'vehicles@create');
 Route::get('/vehicles/delete', 'vehicles@delete');
 Route::get('/vehicles/modify', 'vehicles@modify');
 Route::get('/vehicles/{vehicle}', 'vehicles@show');
 
+Route::post('/vehicles', 'vehicles@store');

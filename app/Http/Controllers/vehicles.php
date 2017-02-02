@@ -99,7 +99,10 @@ class vehicles extends Controller
      */
     public function destroy($id){
 
-    	$vehicles = vehicle::all();
-        return view('vehicles', compact('vehicles'));
+    	$vehicle = vehicle::find($id);
+    	$vehicle->delete();
+
+    	return redirect('vehicles');
+
     }
 }

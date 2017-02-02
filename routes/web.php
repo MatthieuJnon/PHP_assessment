@@ -25,5 +25,6 @@ Route::get('/vehicles/create', 'vehicles@create');
 Route::get('/vehicles/delete', 'vehicles@delete');
 Route::get('/vehicles/modify', 'vehicles@modify');
 Route::get('/vehicles/{vehicle}', 'vehicles@show');
+Route::get('/vehicles/delete/{vehicle}', 'vehicles@destroy');
 
 Route::post('/vehicles', 'vehicles@store');

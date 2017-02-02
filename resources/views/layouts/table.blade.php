@@ -23,7 +23,7 @@
 					<td> {{ $info }} </td>
 				@endif
 			@endforeach
-			<td><a href="{{ url('/vehicles/{$info}') }}" > delete </a></td>
+			<td><a href="{{ url('/vehicles/delete',[$vehicle->id]) }}" > delete </a></td>
 	@endforeach
 
 </table>

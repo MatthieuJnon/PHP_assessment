@@ -1,15 +1,16 @@
 <table class ="vehicles-table">
 	<tr>
-		<td> id</td>
-		<td> First Name</td>
-		<td> Last Name</td>
-		<td> Contact Number</td>
-		<td> email</td>
-		<td> manufacturer</td>
-		<td> type</td>
-		<td> year</td>
-		<td> colour</td>
-		<td> mileage</td>
+		<td> id </td>
+		<td> First Name </td>
+		<td> Last Name </td>
+		<td> Contact Number </td>
+		<td> email </td>
+		<td> manufacturer </td>
+		<td> type </td>
+		<td> year </td>
+		<td> colour </td>
+		<td> mileage </td>
+		<td> edit </td>
 		<td> delete </td>
 	</tr>
 	@foreach($vehicles as $vehicle)
@@ -23,6 +24,7 @@
 					<td> {{ $info }} </td>
 				@endif
 			@endforeach
+			<td><a href="vehicles/{{$vehicle->id}}/edit"> edit </a> </td>
 			<td><a href="{{ url('/vehicles/delete',[$vehicle->id]) }}" > delete </a></td>
 	@endforeach
 

@@ -34,12 +34,10 @@ class vehicles extends Controller
         return view('vehicles.index', compact('vehicles'));
     }
 
-    // public function show(vehicle $vehicle)
-    // {
-
-    // 	return view('vehicle.show', compact('vehicle'));
-    
-    // }
+    public function show(vehicle $vehicle)
+    {
+    	return view('vehicles.show', compact('vehicle'));
+    }
 
 
     /**

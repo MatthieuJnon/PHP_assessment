@@ -10,6 +10,7 @@
 		<td> year </td>
 		<td> colour </td>
 		<td> mileage </td>
+		<td> created at </td>
 		<td> edit </td>
 		<td> delete </td>
 	</tr>
@@ -17,13 +18,14 @@
 		<tr>
 			@foreach($vehicle->toArray() as $info)
 				@if($loop->first)
-					<td><a href="{{ url('/vehicles/{$info}') }}">{{ $info }}</a></td>
+					<td><a href="{{ url('/vehicles',[$vehicle->id]) }}">{{ $info }}</a></td>
 				@elseif($loop->iteration >= 11)
 					@continue
 				@else
 					<td> {{ $info }} </td>
 				@endif
 			@endforeach
+			<td> {{$vehicle->created_at}} </td>
 			<td><a href="vehicles/{{$vehicle->id}}/edit"> edit </a> </td>
 			<td><a href="{{ url('/vehicles/delete',[$vehicle->id]) }}" > delete </a></td>
 	@endforeach

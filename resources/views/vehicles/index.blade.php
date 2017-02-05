@@ -6,7 +6,7 @@
 <div class="container">
 	<h1> Vehicles : </h1>
 
-	<p>clicl on the id of a vehicle to view it.</p>
+	<p>click on the id of a vehicle to view it.</p>
 
 	<p>
 		<div>

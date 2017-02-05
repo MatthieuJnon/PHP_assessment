@@ -16,7 +16,7 @@
 			<td> {{$vehicle->type}} </td>
 			<td> {{$vehicle->created_at}} </td>
 			<td><a href="vehicles/{{$vehicle->id}}/edit"> edit </a> </td>
-			<td><a href="{{ url('/vehicles/delete',[$vehicle->id]) }}" > delete </a></td>
+			<td><a href="{{ url('/vehicles/confirm',[$vehicle->id]) }}" > delete </a></td>
 	@endforeach
 
 </table>

@@ -118,13 +118,19 @@ class vehicles extends Controller
     }
 
 
+    public function confirm($id)
+    {
+        $vehicle = vehicle::find($id);
+        return view('vehicles.confirm', compact('vehicle'));
+    }
+
     /**
      * Soft delete the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id){
+    public function delete($id){
 
     	$vehicle = vehicle::find($id);
     	$vehicle->delete();
